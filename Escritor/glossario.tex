@@ -1,0 +1,54 @@
+% PADRÃO DE ENTRADA NO GLOSSÁRIO
+%\newglossaryentry{aPalavra}{
+%        name= {APALVRA},       %%% EM CAIXA ALTA, É O QUE IRÁ APARECER NO GLOSSÁRIO, PARA SEGUIR A NORMA DO IFPA
+%        text = {aPalavra},    %%% como irá aparecer no TEXTO
+%        sort = {Formula},     %% REESCREVA A PALAVRA SEM USAR NENHUMA ACENTUAÇÃO PARA QUE POSSA SER USADA PARA ORGANZIAR O GLOSSÁRIO
+%        description={É uma linguagem de marcação especialmente feita para documentos científicos}              %DESCRIÇÃO
+%}
+%
+% ADICIONE AS ENTRADAS USANDO A ORDEM ALFABÉTICA
+%
+
+\newglossaryentry{fórmula}{
+        name = {FÓRMULA},
+        text = {fórmula},
+        sort = {Formula},     %% PALAVRA ACENTUADAS DEVERÃO CONTER O CAMPO 'SORT' PARA AJUDAR NA ORDENAÇÃO 
+        description={Uma expressão matemática}
+}
+
+\newglossaryentry{latex}{
+        name= {LATEX},
+        text = {latex},
+        sort = {latex},
+        description={É uma linguagem de marcação especialmente feita para documentos científicos}
+}
+
+\newglossaryentry{matemática}{
+        name = {MATEMÁTICA},
+        text = {matemática},
+        sort = {matematica},
+        description={Matemática é o que a matemática faz}
+}
+
+\longnewglossaryentry{sample}{
+    name = {SAMPLE},
+    text = {sample},            % -    versão em texto
+    plural = {samples},         %  -    versão em plural no texto
+    sort = {sample},
+}{%
+     {an example}       %DESCRIÇÃO
+}
+
+%\newterm[〈key=value list〉]{〈entry-label〉}
+%This is just a shortcut that uses \newglossaryentry with the name set to 〈entry-label〉 and
+%the description is suppressed.
+
+
+%\newglossaryentry{not:set}
+%{% This entry goes in the `notation' glossary:
+%type={notation},
+%name={$\mathcal{S}$},
+%text={\mathcal{S}},
+%description={A set},
+%sort={S}
+%}

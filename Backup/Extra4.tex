@@ -1,0 +1,101 @@
+\chapter{CITAÇÕES}
+\label{sec:citacoes}
+
+\section{Citações}
+    \subsection{Citações com autoria dada pelo título (cite) }
+
+    Padrão de referência para citação implícita e explícita.
+    
+    Artigo \cite{negrão14}
+    
+    Livro \cite[p.~55]{higginbottom1998performance}.
+    
+    Livro \cite{kurose2013computer}.
+    
+    Relatório Técnico \cite{Scott2007}.
+    
+    Site \cite{Raspberry}.
+
+\begin{lstlisting}[language=TeX, caption={citação1}]
+Artigo \cite{negrão14}
+
+Livro \cite[p.~55]{higginbottom1998performance}.
+
+Livro \cite{kurose2013computer}.
+
+Relatório Técnico \cite{Scott2007}.
+
+Site \cite{Raspberry}.    
+\end{lstlisting}
+
+   \subsection{Referências citadas por outra fonte (apud)}
+    
+    Livro \apud{higginbottom1998performance}{kurose2013computer}.
+    
+    Relatório Técnico \apudonline{Scott2007}{negrão14}.
+
+\begin{lstlisting}[language=TeX, caption={citação2}]
+Livro \apud{higginbottom1998performance}{kurose2013computer}.
+
+Relatório Técnico \apudonline{Scott2007}{negrão14}.
+\end{lstlisting}
+
+   \subsection{Citações Múltiplas}
+    
+    Artigo \cite{negrão14, higginbottom1998performance, kurose2013computer}.
+    
+    Relatório Técnico \citeonline{Scott2007, kurose2013computer}.
+
+\begin{lstlisting}[language=TeX, caption={citação4}]
+Artigo \cite{negrão14, higginbottom1998performance, kurose2013computer}.
+
+Relatório Técnico \citeonline{Scott2007, kurose2013computer}.
+\end{lstlisting}
+
+\section{Referenciar seção, imagem, tabela}
+
+    Use o barra \ acompanhado do ref e logo depois adicione o tipo:referencia. Referência da imagem da logo da UFAM \ref{fig:logoIFPA} acompanhada da seção de introdução \ref{sec:introdução} na página \pageref{fig:logoIFPA}.
+
+\begin{lstlisting}[language=TeX, caption={Refenciando Elementos}]
+Referenciando imagem  \ref{fig:logoIFPA}
+
+Referenciando seção \ref{sec:introdução}
+
+Referenciando página \pageref{fig:logoIFPA}
+\end{lstlisting}
+
+\section{Adicionando Código}
+
+Para adicionar código usando a biblioteca lstlisting, você deverá recorrer ao seguinte padrão.
+
+\begin{lstlisting}[language=TeX, caption={Adicionando Código em LaTeX}]
+\begin{lstlisting}[language=TeX, caption={Adicionando Código em LaTeX}]
+
+Código em Latex com citação \cite{kurose2013computer}.
+
+\end{ lstlisting}    %%% SEM O ESPAÇO EM BRANCO
+\end{lstlisting}
+
+\begin{lstlisting}[language=TeX, caption={Adicionando Código - Como aparecerá}]
+
+Código em Latex com citação \cite{kurose2013computer}.
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=C, caption={HelloWorld.c - neste template}]
+\begin{lstlisting}[language=C, caption={HelloWorld.c - neste template}]
+#include<stdio.h>
+
+void main(){
+    printf("Ola Mundo");
+}
+\end{ lstlisting}    // SEM O ESPAÇO EM BRANCO
+\end{lstlisting}
+
+\begin{lstlisting}[language=C, caption={HelloWorld.c - Como aparecerá}]
+#include<stdio.h>
+
+void main(){
+    printf("Ola Mundo");
+}
+\end{lstlisting}

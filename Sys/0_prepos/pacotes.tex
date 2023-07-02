@@ -1,0 +1,391 @@
+% ---
+% Pacotes básicos
+% ---
+\usepackage{bookmark}       % Usa a fonte Bookman Old Style
+\usepackage[utf8]{inputenc} % permite edição direta com acentos
+\usepackage[brazil]{babel}  % hifenização e títulos em português do Brasil
+\usepackage[T1]{fontenc}	% Selecao de codigos de fonte.
+\usepackage{color}			% Controle das cores
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{float}
+\usepackage{xurl}
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage[euler]{textgreek}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+\usepackage{lipsum}
+\usepackage{textcomp}
+\usepackage{parskip}
+\DisemulatePackage{setspace}
+
+%%%    IMAGENS
+\usepackage{array}
+\usepackage{graphicx}		% Inclusão de gráficos
+\graphicspath{{imagens/}}
+
+%%%    TABELAS E QUADRO
+\usepackage{tabularx,ragged2e}	% Para inserir tabelas
+\usepackage{multirow}			% Para mesclar células
+\usepackage[dvipsnames,table,xcdraw]{xcolor}		% Permite adicionar cores nas linhas de tabelas
+\usepackage{amsfonts}			% Permite usar notação de conjuntos
+\usepackage{amsmath}			% Permite citar equações
+\usepackage{amsthm}				% Permite criar teoremas e experimentos
+%\usepackage[font={bf, small}, labelsep=endash, labelfont=bf]{caption}	% Faz legenda de figuras ficarem em negrito
+\usepackage[font={small}, labelsep=endash]{caption}	% Faz legenda de figuras ficarem em negrito
+
+
+% -------------------------------------------------
+% Pacotes para QUDROS    -     funciona
+% -------------------------------------------------
+%\newcommand{\autodot}{}%comando criado para anular o erro
+%\usepackage{tocbibind}
+%\usepackage{tocbasic}
+%\DeclareTOCStyleEntries{tocline}{figure,table}% now controlled by tocbasic
+%\DeclareNewTOC[%
+%    type=quadro,%
+%    float, % define a floating environment
+%    name=Quadro, %
+%    listname={LISTA DE QUADROS}, %
+%    setup=totoc,    % entry in ToC
+%    tocentryindent:=figure,% same indentation as for figure
+%    tocentrynumwidth:=figure,% same numwidth as for figure
+%    floattype=4,%
+%]{loq}
+%\setuptoc{loq}{chapteratlist}
+%%%Colocando este comando resolve o problema da lista contudo cria outro erro
+
+\usepackage{cancel}				% Permite fazer expressão tendendo a zero
+\usepackage{epstopdf}			% Converte eps para pdf
+
+%%%    índex
+\usepackage[imakeidx]{knowledge}
+\indexsetup{othercode=\small}
+\makeindex[program=makeindex,columns=1,intoc=true,options={-s 0_prepos/indexStyle.ist}]
+\makeatletter
+\def\@idxitem{\par\hangindent 0pt}
+\makeatother
+
+%%%%%%%%% NOVO
+\usepackage{microtype} 	% para melhorias de justificação
+\usepackage{setspace}
+\urlstyle{same}
+\usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
+
+%%%    tabelas - configuração
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{lscape}
+
+%%%     hifenização do português para o preambulo
+\usepackage{geometry}
+\usepackage{hyphenat}
+\tolerance=9000
+
+%%% lista de abreviações e siglas automática 
+% -------------------------------------------------
+% CONFIGURAÇÃO DE CAPÍTULOS E SEÇÕES
+% -------------------------------------------------
+\usepackage{titlesec}
+% --------- Capítulo
+\titleformat{\chapter}
+    {\centering\normalfont\sffamily\bfseries\MakeUppercase}{\thechapter}{0em}{}
+\titlespacing{\chapter}{0em}{0em}{3em}
+% --------- Seção
+\titleformat{\section}
+    {\normalfont\sffamily\normalsize\bfseries}{\thesection}{0.5em}{}
+\titlespacing{\section}{0em}{1.5em}{1.5em}
+% --------- Subseção
+\titleformat{\subsection}
+    {\normalfont\sffamily\normalsize}{\thesubsection}{0.5em}{}
+\titlespacing{\subsection}{0em}{1.5em}{0em}
+
+% ------------------------------------------------
+% Glossário, Index
+% -------------------------------------------------
+\usepackage[
+    record=hybrid,
+    symbols,
+    abbreviations,
+    acronym,
+    toc,
+    automake,
+    xindy={language=portuguese},
+    postdot,
+    nonumberlist
+]{glossaries-extra}
+\usepackage{glossary-longbooktabs}
+\usepackage{glossaries-extra-stylemods}
+\usepackage{glossary-inline}
+\setglossarystyle{list}
+\glssetcategoryattribute{general}{indexname}{textbf}
+\glssetcategoryattribute{general}{dualindex}{true}
+\glssetcategoryattribute{abbreviation}{indexname}{textbf}
+\glssetcategoryattribute{abbreviation}{dualindex}{true}
+\glssetcategoryattribute{general}{glossname}{firstuc}
+\GlsXtrEnableIndexFormatOverride
+\renewcommand*{\glsxtrautoindexentry}[1]{\string\glsentryfirst{#1}}
+\renewcommand*{\glsxtrautoindexassignsort}[2]{%
+  \ifglshaslong{#2}%
+  {\glsletentryfield{#1}{#2}{long}}%
+  {\glsletentryfield{#1}{#2}{sort}}%
+}
+\makeglossaries
+\renewcommand*{\glsnamefont}[1]{%
+    \textmd{#1}:%
+}
+\input{Escritor/glossario}
+
+% -------------------------------------------------
+% abreviações e siglas
+% -------------------------------------------------
+\usepackage{acro}
+\input{Escritor/abreviaçõesSiglas}
+\input{Escritor/simbolos}
+
+% -------------------------------------------------
+%%%%%% estilo do capítulo
+%%%%%% escolha 1 e tire o comentário
+%% acesse a página e escolha
+%%http://ctan.math.washington.edu/tex-archive/info/latex-samples/MemoirChapStyles/MemoirChapStyles.pdf
+% -------------------------------------------------
+\setlength\midchapskip{12pt}
+\input{Escritor/capaContracapa}
+\input{Escritor/preambulo}
+
+% -------------------------------------------------
+% Informações do PDF
+% -------------------------------------------------
+\makeatletter
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    bookmarksopen=true,
+    %pagebackref=true,
+	pdftitle={\imprimirtitulo}, 
+	pdfauthor={\imprimirautor},
+    pdfsubject={\imprimirpreambulo},
+    pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={\imprimirpalavraschave}{trabalho acadêmico},
+	bookmarksdepth=4,
+    breaklinks=true,
+}
+\makeatother
+
+% -------------------------------------------------
+% Espaçamentos entre linhas e parágrafos 
+% -------------------------------------------------
+% O tamanho do parágrafo é dado por:
+\setlength{\parskip}{0.0cm}
+\setlength{\parindent}{1.0cm}
+\renewcommand{\baselinestretch}{1.5}
+\renewcommand*{\afterchapskip}{1.5ex}
+
+% -------------------------------------------------
+% Referências Bibliográficas se dá pela pasta abnt
+% e a seguinte biblioteca
+% -------------------------------------------------
+\usepackage{hyperref}
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage{breakurl}
+\usepackage[
+        versalete,
+        abnt-emphasize = bf, % destaca o titulo da revista ou livro em negrito;
+        abnt-etal-list = 3, % trabalhos com mais de 3 autores recebem et al.,;
+        abnt-etal-text = it, % escreve o et al., em italico;
+        abnt-and-type = &, % usa o carater '&' no lugar de 'e' para mais de um autor;
+        abnt-last-names = abnt, % trata sobrenomes 'estritamente' conforme a ABNT; e
+        abnt-repeated-author-omit = no, % autores com + de uma entrada recebem '____.',
+        alf
+%        abnt-url-package = url
+        ]{abntex2cite}
+\usepackage{Sys/0_prepos/url6023}
+
+% -------------------------------------------------
+% Biblioteca para adicionar CÓDIGO
+% -------------------------------------------------
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=true,
+    escapeinside={\%*}{*)},  % if you want to add LaTeX within your code
+    keepspaces=true,  % keeps spaces in text
+    mathescape=true,
+    breaklines=true,
+    caption={Código},
+    captionpos=t,
+    numbers=left,                    
+    numbersep=2pt,                  
+    stepnumber=1,
+    numberstyle=\tiny,
+    numbersep=10pt,
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    extendedchars=true,
+    inputencoding=utf8,
+    literate={á}{{\'a}}1  {é}{{\'e}}1  {í}{{\'i}}1 {ó}{{\'o}}1  {ú}{{\'u}}1 {Á}{{\'A}}1  {É}{{\'E}}1  {Í}{{\'I}}1 {Ó}{{\'O}}1  {Ú}{{\'U}}1 {à}{{\`a}}1  {è}{{\`e}}1  {ì}{{\`i}}1 {ò}{{\`o}}1  {ù}{{\`u}}1 {À}{{\`A}}1  {È}{{\'E}}1  {Ì}{{\`I}}1 {Ò}{{\`O}}1  {Ù}{{\`U}}1 {ä}{{\"a}}1  {ë}{{\"e}}1  {ï}{{\"i}}1 {ö}{{\"o}}1  {ü}{{\"u}}1 {Ä}{{\"A}}1  {Ë}{{\"E}}1  {Ï}{{\"I}}1 {Ö}{{\"O}}1  {Ü}{{\"U}}1 {â}{{\^a}}1  {ê}{{\^e}}1  {î}{{\^i}}1 {ô}{{\^o}}1  {û}{{\^u}}1 {Â}{{\^A}}1  {Ê}{{\^E}}1  {Î}{{\^I}}1 {Ô}{{\^O}}1  {Û}{{\^U}}1 {œ}{{\oe}}1  {Œ}{{\OE}}1  {æ}{{\ae}}1 {Æ}{{\AE}}1  {ß}{{\ss}}1 {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1  {Ø}{{\O}}1   {å}{{\r a}}1 {Å}{{\r A}}1 {ã}{{\~a}}1  {õ}{{\~o}}1 {Ã}{{\~A}}1  {Õ}{{\~O}}1 {ñ}{{\~n}}1  {Ñ}{{\~N}}1  {¿}{{?`}}1  {¡}{{!`}}1 {°}{{\textdegree}}1 {º}{{\textordmasculine}}1 {ª}{{\textordfeminine}}1,
+    frame=single,
+    framerule=0pt,
+    framesep=-2pt,
+    rulesep=0pt,
+    rulecolor=\color{black},
+    showspaces=false,
+    %nolol=false,
+    numberbychapter=false,
+}
+\lstset{style=mystyle}
+\usepackage[hypcap]{caption}
+\DeclareCaptionLabelFormat{bf-parens}{(\textbf{#2})}
+\captionsetup[lstlisting]{singlelinecheck=false, labelsep=endash}
+\renewcommand\lstlistingname{Código}
+\renewcommand\lstlistlistingname{Lista de Códigos}
+
+
+% -------------------------------------------------
+% Padrão para CAPA e CONTRACAPA
+% -------------------------------------------------
+\geometry{a4paper, left=3cm, right=2cm, top=3cm, bottom=2cm, headheight=0.5cm, textheight=44\baselineskip, headsep=0.01cm}
+
+% -------------------------------------------------
+% Pacotes para sumário
+% -------------------------------------------------
+\usepackage{tocloft}
+
+%8888888888888888888888888888888888888888888888888888
+%            ACRESCENTADOS POR ELIESIO
+%8888888888888888888888888888888888888888888888888888
+\usepackage{tcolorbox}
+\usepackage{pifont}
+\usepackage{tikz}
+\input{Sys/0_prepos/ajudas}
+
+%8888888888888888888888888888888888888888888888888888
+
+
+
+% -------------------------------------------------
+% Pacotes para QUDROS
+% -------------------------------------------------
+\newcommand{\quadroname}{Quadro}
+\newcommand{\listofquadrosname}{Lista de Quadros}
+\newfloat{Quadro}{\quadroname}{loq}[chapter]
+\restylefloat*{Quadro}
+\setfloatadjustment{Quadro}{\centering}
+\setfloatlocations{Quadro}{hbtp}
+\newlistof{listofquadros}{loq}{\listofquadrosname}
+\newlistentry{Quadro}{loq}{0}
+\counterwithout{Quadro}{chapter}
+\renewcommand{\cftQuadroname}{\quadroname\space}
+\renewcommand*{\cftQuadroaftersnum}{\hfill\textendash\hfill}
+
+
+% -------------------------------------------------
+% Configurações para aumentar a quantidade caracteres
+% -------------------------------------------------
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% -------------------------------------------------
+% Configurações para definir um comando de espaço inical no parágrafo
+% -------------------------------------------------
+\newcommand\tab[1][1cm]{\hspace*{#1}}   
+%%%%%       \tab
+
+% -------------------------------------------------
+% Configurações para Definir quais capítulos aparecerão
+% -------------------------------------------------
+\providecommand{\Dedicatoria}{}
+\newcommand{\temDedicatoria}[1]{
+\renewcommand{\Dedicatoria}{#1}
+}
+
+\providecommand{\Agradecimento}{}
+\newcommand{\temAgradecimento}[1]{
+\renewcommand{\Agradecimento}{#1}
+}
+
+\providecommand{\Epigrafe}{}
+\newcommand{\temEpigrafe}[1]{
+\renewcommand{\Epigrafe}{#1}
+}
+
+\providecommand{\Ilustracoes}{}
+\newcommand{\temListadeIlustracoes}[1]{
+\renewcommand{\Ilustracoes}{#1}
+}
+
+\providecommand{\Tabelas}{}
+\newcommand{\temListadeTabelas}[1]{
+\renewcommand{\Tabelas}{#1}
+}
+
+\providecommand{\LCodigos}{}
+\newcommand{\temListadeCodigos}[1]{
+\renewcommand{\LCodigos}{#1}
+}
+
+\providecommand{\LQuadros}{}
+\newcommand{\temListadeQuadros}[1]{
+\renewcommand{\LQuadros}{#1}
+}
+
+\providecommand{\Siglas}{}
+\newcommand{\temListadeSiglas}[1]{
+\renewcommand{\Siglas}{#1}
+}
+
+\providecommand{\Simbolos}{}
+\newcommand{\temListadeSimbolos}[1]{
+\renewcommand{\Simbolos}{#1}
+}
+
+\providecommand{\Glossario}{}
+\newcommand{\temGlossario}[1]{
+\renewcommand{\Glossario}{#1}
+}
+
+\providecommand{\Apendices}{}
+\newcommand{\temApendices}[1]{
+\renewcommand{\Apendices}{#1}
+}
+
+\providecommand{\Anexos}{}
+\newcommand{\temAnexos}[1]{
+\renewcommand{\Anexos}{#1}
+}
+
+\providecommand{\Indice}{}
+\newcommand{\temIndice}[1]{
+\renewcommand{\Indice}{#1}
+}
+
+\providecommand{\ExemploTexto}{}
+\newcommand{\temExemploTexto}[1]{
+\renewcommand{\ExemploTexto}{#1}
+}
+
+\newenvironment{citacaodireta}
+{\begin{quotation}\fontsize{10}{10}\selectfont}%\footnotesize}%
+{\end{quotation}}
+
+
+\input{DefiniçãoEstrutura}
+
+\makeindex

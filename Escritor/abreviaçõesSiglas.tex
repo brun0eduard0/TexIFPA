@@ -1,0 +1,64 @@
+%%%  LISTA DE ABREVIAÇÕES e SIMBOLOS
+% no decorrer da sua escrita, você usará abreviações e símbolos
+% estes simbolos e abreviações devem constar na lista de abreviações
+% e simbolos. Para gerar AUTOMATICAMENTE estas listas sem o menor esforço 
+% você deve declarar NESTE documento todas as ABREVIAÇÕES e todos os SÍMBOLOS
+% que você usará no decorrer do texto. 
+% 
+% SOMENTE DEPOIS DE DECLARAR AQUI
+%
+% você será capaz de pôr o simbolo usando a biblioteca ACRONYM
+%
+% usando os comandos        \ac      e     \acl
+%	
+%	 Para utilizar abreviaturas e simbolos, basta utilizar o comando barra \ combinado com ac ou acl.
+%	 
+%	 Abreviaturas e a versão por extenso.
+%	 
+%	 AC \ac{abntex}.     MOSTRARÁ A ABREVIAÇÃO
+%%	 
+%	 ACL \acl{abntex}.   MOSTRARÁ AS PALAVRAS DA ABREVIAÇÃO POR EXTENSO
+%	 
+%%	 Simbolos e a versão por extenso.
+%	 
+%	 AC  \ac{lambda}.   MOSTRARÁ O SIMBOLO
+%	 
+%	 ACL \acl{lambda}.  MOSTRARÁ A PALAVRA DO SIMBOLO POR EXTENSO
+% 
+% class `abbrev': abbreviations:
+%NOTE QUE SOMENTE OS QUE SÃO CHAMADOS NO DECORRER DO TEXTO IRÃO APARECER NA LISTA DE ABREVIATURAS E SIMBOLOS
+%PADRÃO PARA ABREVIATURA
+
+%\DeclareAcronym{}{
+%	short = \normalfont{},
+%	long  = \textit{},
+%	class = abbrev
+%}
+
+\DeclareAcronym{sbc}{
+	short = \normalfont{SBC},
+	short-plural = s,
+	long  = Sociedade Brasileira de Computação,
+	tag = abbrev
+}
+
+\DeclareAcronym{nc}{
+	short = \normalfont{NC},
+	long  = \textit{Networking Coding},
+	tag = abbrev
+}
+
+\DeclareAcronym{abnt}{
+	short = \normalfont{ABNT},
+	short-plural = s,
+	long  = Associação Brasileira de Normas Técnicas,
+	tag = abbrev
+}
+
+\DeclareAcronym{abntex}{
+	short = \normalfont{abnTeX},
+	short-plural = s,
+	long  = ABsurdas Normas para TeX,
+	tag = abbrev
+}
+

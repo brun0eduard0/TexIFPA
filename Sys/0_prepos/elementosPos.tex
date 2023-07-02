@@ -1,0 +1,24 @@
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0.01cm}
+\setlength{\topmargin}{-0.25cm}
+
+% -----------------------Glossário-----------------------------------
+\ifthenelse{\equal{\Glossario}{}}{}{
+\glsaddall
+\chapter*{GLOSSÁRIO}
+\addcontentsline{toc}{chapter}{\hspace{21mm}GLOSSÁRIO}
+\setglossarysection{section}
+\renewcommand{\glossarysection}[2][]{}
+\printglossary
+}
+
+% -----------------------Apêndices--------------------------------
+\ifthenelse{\equal{\Apendices}{}}{}{
+\ifthenelse{\equal{\ExemploTexto}{}}
+{\include{8_apendice/cap8}}{\include{Backup/Extra8}}
+}
+
+% ------------------------Anexos-------------------------------
+\ifthenelse{\equal{\Anexos}{}}{}{
+\include{9_anexos/cap9}
+}
